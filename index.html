@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Rolling a Die</title>
+        <style>
+            * {
+                font-family: 'Arial', sans-serif;
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container {
+                text-align: center;
+                padding: 40px;
+                background-color: #fff;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: box-shadow 0.3s ease;
+            }
+            .container:hover {
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            h1 {
+                background-color: #343a40;
+                color: #fff;
+                padding: 15px 30px;
+                border-radius: 10px;
+                margin-bottom: 30px;
+            }
+            img {
+                width: 200px;
+                height: auto;
+                margin: 20px 0;
+                transition: transform 0.3s ease;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+            #btn1 {
+                background-color: #28a745;
+                color: white;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 18px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+            #btn1:hover {
+                background-color: #218838;
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Rolling a Die 🎲</h1>
+            <button onclick="roll()" id="btn1">Roll</button>
+            <br/>
+            <img id="imag1" src="d1.PNG" />
+        </div>
+
+        <script>
+            function roll() {
+                let image1 = document.getElementById("imag1");
+                let names = ["d1.PNG", "d2.PNG", "d3.PNG", "d4.PNG", "d5.PNG", "d6.PNG"];
+                let selImage = Math.floor(Math.random() * names.length);
+                image1.src = names[selImage];
+            }
+        </script>
+    </body>
+</html>
